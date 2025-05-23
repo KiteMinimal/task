@@ -13,7 +13,11 @@
     "@types/react-dom": "^19.1.5",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+<<<<<<< HEAD
     "react-scripts": "^3.0.1",
+=======
+    "react-scripts": "5.0.1",
+>>>>>>> 19685dc288455a785f19a6e6d2c2d9899bb717a1
     "typescript": "^4.9.5",
     "web-vitals": "^2.1.4"
   },
