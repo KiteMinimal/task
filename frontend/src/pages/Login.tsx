@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import '../styles/Login.css';
 import RegisterModal from '../components/RegisterModal';
-import { useNavigate } from 'react-router-dom';
 import api from '../services/api';
+import { useNavigate } from 'react-router-dom';
 
 const Login: React.FC = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [showModal, setShowModal] = useState(false);
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -22,7 +22,7 @@ const Login: React.FC = () => {
     const token = response.data.access_token;
     localStorage.setItem('token', token);
 
-    navigate('/home'); // Redirect to protected home
+    navigate('/landing'); // ← CURRENT
   } catch (err) {
     alert('Invalid username or password');
   }

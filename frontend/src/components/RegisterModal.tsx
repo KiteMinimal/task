@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './RegisterModal.css';
+import '../styles/RegisterModal.css';
 import api from '../services/api'
 
 interface Props {

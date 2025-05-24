@@ -1,10 +1,10 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'http://localhost:3000/auth', // ✅ Match your NestJS base route
+  baseURL: 'http://localhost:3000/auth', 
 });
 
-// Add token to requests (optional enhancement for later)
+
 api.interceptors.request.use((config) => {
   const token = localStorage.getItem('token');
   if (token && config.headers) {
