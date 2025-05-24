@@ -37,6 +37,7 @@ html {
   margin-right: 1rem;
 }
 
+
 .header nav {
   display: flex;
   gap: 1rem;
@@ -302,6 +303,11 @@ html {
   font-size: 1.2rem;
 }
 
+/* All the hidden elements and tags*/
+.logo-res{
+  display: none;
+}
+
 /* iPhone 13 & 14 Responsive Enhancements */
 @media screen and (max-width: 430px) {
   .header {
@@ -415,3 +421,45 @@ html {
     font-size: 1rem;
   }
 }
+
+/* Mobile Navbar for Landing Page */
+@media screen and (max-width: 768px) {
+  .header {
+    justify-content: space-between;
+    padding: 1rem;
+  }
+
+  .logo {
+    font-size: 1.2rem;
+    font-weight: bold;
+    display: none;
+  }
+
+  .logo-res {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-left: 1rem;
+  }
+
+  nav, a,
+  .search-contact,
+  .login-btn {
+    display: none !important;
+  }
+
+  .mobile-nav {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .mobile-nav i {
+    font-size: 1.2rem;
+    color: #333;
+    cursor: pointer;
+  }
+}
+
+/* Optional: Basic icons using Font Awesome */
+/* Make sure to include Font Awesome CSS in your project */

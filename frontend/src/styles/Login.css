@@ -1,4 +1,4 @@
-html,body{
+html, body {
   scroll-behavior: smooth;
   background-image: url('/public/whatsAppTheme.jpg');
 }
@@ -10,7 +10,6 @@ html,body{
   padding: 2rem;
   width: 100%;
   max-width: 500px;
-  /* margin: auto; */
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   font-family: 'Segoe UI', sans-serif;
 }
@@ -21,7 +20,7 @@ html,body{
   gap: 1.2rem;
 }
 
-.login-form h2{
+.login-form h2 {
   font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 0.5rem;
@@ -100,10 +99,49 @@ button[type="submit"]:hover {
   text-decoration: none;
 }
 
-.register-link{
+.register-link {
   color: blue;
   cursor: pointer;
   text-decoration: underline;
   font-weight: 600;
   margin-left: 0.5rem;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 480px) {
+  .login-container {
+    width: 90%;;
+    padding: 1.5rem;
+    margin: 8rem auto;
+    border-radius: 16px;
+  }
+
+  .login-form h2 {
+    font-size: 1.3rem;
+  }
+
+  input, select {
+    width: 100%;
+    font-size: 13px;
+    padding: 10px 14px;
+  }
+
+  button[type="submit"] {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .cancel-btn {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .terms-text,
+  .login-bottom {
+    font-size: 12px;
+  }
+
+  .register-link {
+    font-size: 13px;
+  }
 }

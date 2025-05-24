@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../styles/Landing.css";
 import ModalForm from "../components/ModalForm";
+import { IoSearchOutline } from "react-icons/io5";
 
 const Landing: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -14,6 +15,7 @@ const Landing: React.FC = () => {
       {/* Header */}
       <header className="header">
         <div className="logo">TRAVEL SHOP</div>
+        <div className="logo-res">deep-O</div>
         <nav>
           <a href="#">Buy</a>
           <a href="#">Curate</a>
@@ -22,6 +24,9 @@ const Landing: React.FC = () => {
           <input type="text" placeholder="Search" />
         </div>
         <a href="#">Contact Us</a>
+        <div className="mobile-icons">
+          <IoSearchOutline />
+        </div>
       </header>
 
       {/* Hero */}
