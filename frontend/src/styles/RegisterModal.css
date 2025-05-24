@@ -1,37 +1,39 @@
-.login-container {
-  height: 100vh;
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #f4f4f4;
+  z-index: 1000;
 }
 
-.login-form {
+.modal-box {
   background: white;
   padding: 2rem;
   border-radius: 10px;
   width: 90%;
   max-width: 400px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.login-form h2 {
-  margin-bottom: 1.5rem;
   text-align: center;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
-.login-form input {
+.modal-box input {
   display: block;
   width: 100%;
-  padding: 0.8rem;
+  padding: 0.7rem;
   margin-bottom: 1rem;
-  border-radius: 5px;
   border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
-.login-form button {
+.modal-box button {
   width: 100%;
-  padding: 0.8rem;
+  padding: 0.7rem;
+  margin-bottom: 0.5rem;
   background-color: #3b82f6;
   color: white;
   border: none;
@@ -39,8 +41,7 @@
   cursor: pointer;
 }
 
-.login-form .register-link {
-  color: #3b82f6;
-  cursor: pointer;
-  font-weight: bold;
+.modal-box .cancel-btn {
+  background-color: #ccc;
+  color: #333;
 }
