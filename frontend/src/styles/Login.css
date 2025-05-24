@@ -1,10 +1,11 @@
 html,body{
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  scroll-behavior: smooth;
+  margin-top: 2.5rem;
+  background-color: #e9d1d1;
+  background-image: url('/public/whatsAppTheme.jpg');
 }
 
-.login-container, .modal-box {
+.login-container {
   background: white;
   border-radius: 20px;
   padding: 2rem;
@@ -15,13 +16,13 @@ html,body{
   font-family: 'Segoe UI', sans-serif;
 }
 
-.login-form, .modal-box form {
+.login-form {
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
 }
 
-.login-form h2, .modal-box h2 {
+.login-form h2{
   font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 0.5rem;
@@ -102,4 +103,8 @@ button[type="submit"]:hover {
 
 .register-link{
   color: blue;
+  cursor: pointer;
+  text-decoration: underline;
+  font-weight: 600;
+  margin-left: 0.5rem;
 }
