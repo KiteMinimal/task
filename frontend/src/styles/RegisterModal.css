@@ -36,6 +36,7 @@
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
+  margin-top: 1rem;
 }
 
 /* Inputs */
@@ -45,7 +46,7 @@
   border: 1px solid #ccc;
   border-radius: 10px;
   font-size: 14px;
-  width: 90%;
+  width: 98%;
 }
 
 .modal-box input::placeholder {
@@ -66,8 +67,6 @@
 
 /* Submit Button */
 .modal-box button[type="submit"] {
-  width: 89%;
-  margin: 0 auto;
   background: linear-gradient(to right, #ff007a, #e6007e);
   color: white;
   padding: 12px;
@@ -76,7 +75,8 @@
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  margin-top: .8rem;
+  transition: 0.3s ease;
 }
 
 .modal-box button[type="submit"]:hover {
@@ -85,14 +85,17 @@
 
 /* Cancel Button */
 .cancel-btn {
-  width: 70%;
-  margin: 0 auto;
   background: #ccc;
   color: #333;
   padding: 10px;
-  border-radius: 8px;
+  border-radius: 50px;
   border: none;
   cursor: pointer;
+}
+
+.cancel-btn:hover {
+  background: #000000;
+  color: #fff;
 }
 
 /* Terms & Link Text */

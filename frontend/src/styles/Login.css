@@ -1,17 +1,16 @@
 html,body{
   scroll-behavior: smooth;
-  margin-top: 2.5rem;
-  background-color: #e9d1d1;
   background-image: url('/public/whatsAppTheme.jpg');
 }
 
 .login-container {
+  margin: 3rem auto;
   background: white;
   border-radius: 20px;
   padding: 2rem;
   width: 100%;
   max-width: 500px;
-  margin: auto;
+  /* margin: auto; */
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   font-family: 'Segoe UI', sans-serif;
 }
