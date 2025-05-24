@@ -11,3 +11,13 @@
   display: inline-block;
   text-align: left;
 }
+
+.logout-btn {
+  margin-top: 1.5rem;
+  padding: 0.7rem 1.2rem;
+  background-color: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
