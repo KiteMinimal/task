@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './RegisterModal.css';
+import api from '../services/api'
 
 interface Props {
   onClose: () => void;
@@ -9,11 +10,19 @@ const RegisterModal: React.FC<Props> = ({ onClose }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleRegister = (e: React.FormEvent) => {
+  const handleRegister = async (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: Call backend to register user
-    console.log({ username, password });
-    onClose(); // Close modal after registration
+    try {
+    await api.post('/register', {
+      username,
+      password,
+    });
+
+    alert('Registered successfully! Now login.');
+    onClose(); // Close modal
+  } catch (err) {
+    alert('Registration failed. Try a different username.');
+  }
   };
 
   return (
