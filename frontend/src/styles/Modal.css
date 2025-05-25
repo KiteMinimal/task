@@ -1,9 +1,10 @@
+* {
+  box-sizing: border-box;
+}
+
 .modal-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
@@ -11,34 +12,61 @@
   z-index: 1000;
 }
 
+
 .modal-box {
   background: white;
   border-radius: 16px;
-  padding: 2rem;
-  max-width: 500px;
+  padding: 1.25rem 1.5rem;
+  max-width: 460px;
   width: 90%;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   position: relative;
 }
 
+
 .modal-box h2 {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: bold;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.4rem;
 }
 
 .modal-box p {
-  font-size: 1rem;
-  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
   color: #666;
+}
+
+
+form label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: 4px;
+  display: block;
+  color: #333;
+}
+
+input, select {
+  width: 100%;
+  padding: 8px;
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
 }
 
 .row {
   display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 0.75rem;
   margin-bottom: 1rem;
 }
+
+@media (min-width: 600px) {
+  .row {
+    flex-direction: row;
+  }
+}
+
 
 .row input {
   flex: 1;
@@ -46,26 +74,28 @@
 
 input, select {
   width: 100%;
-  padding: 10px;
-  margin-bottom: 1rem;
+  padding: 8px; /* reduced from 10px */
+  margin-bottom: 0.75rem; /* tighter spacing */
   border: 1px solid #ccc;
-  border-radius: 8px;
+  border-radius: 6px;
+  font-size: 0.95rem;
 }
 
 button[type='submit'] {
   background: #e6007e;
   color: white;
   border: none;
-  padding: 12px;
+  padding: 10px;
   width: 100%;
   border-radius: 50px;
-  font-size: 1rem;
+  font-size: 0.95rem;
   cursor: pointer;
 }
 
 button[type='submit']:hover {
   background-color: #c8006f;
 }
+
 
 .close-button {
   position: absolute;
@@ -77,25 +107,17 @@ button[type='submit']:hover {
   cursor: pointer;
 }
 
-.terms {
-  font-size: 0.85rem;
+.terms, .login-note {
+  font-size: 0.75rem;
   text-align: center;
   color: #555;
+  margin-top: 0.5rem;
 }
 
-.terms a {
-  color: #e6007e;
-  font-weight: 500;
-}
-
-.login-note {
-  margin-top: 1rem;
-  text-align: center;
-  font-size: 0.9rem;
-}
-
+.terms a,
 .login-note span {
   color: #e6007e;
-  font-weight: bold;
+  font-weight: 500;
   cursor: pointer;
 }
+

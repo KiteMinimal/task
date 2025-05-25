@@ -7,24 +7,21 @@ interface ModalFormProps {
 }
 
 const ModalForm: React.FC<ModalFormProps> = ({ onClose }) => {
+  const [isLoading, setIsLoading] = useState(false);
 
-    const [isLoading, setIsLoading] = useState(false);
-
-    const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
 
     setTimeout(() => {
       setIsLoading(false);
-      onClose(); // hide both modals after 3 seconds
+      onClose(); // hide both modals after 5 seconds
     }, 5000);
   };
 
-
   return (
     <div className="modal-overlay">
-
-        {isLoading && <LoadingModal />}
+      {isLoading && <LoadingModal />}
 
       <div className="modal-box">
         <button className="close-button" onClick={onClose}>✕</button>
@@ -33,13 +30,24 @@ const ModalForm: React.FC<ModalFormProps> = ({ onClose }) => {
 
         <form onSubmit={handleSubmit}>
           <div className="row">
-            <input type="text" placeholder="Name of the organisation" />
-            <input type="text" placeholder="Contact number" />
+            <div style={{ flex: 1 }}>
+              <label htmlFor="organization">Name of the organisation</label>
+              <input id="organization" type="text" placeholder="Organization name" />
+            </div>
+            <div style={{ flex: 1 }}>
+              <label htmlFor="contact">Contact number</label>
+              <input id="contact" type="text" placeholder="Contact number" />
+            </div>
           </div>
-          <input type="email" placeholder="Enter your email ID" />
-          <select>
+
+          <label htmlFor="email">Email ID</label>
+          <input id="email" type="email" placeholder="Enter your email ID" />
+
+          <label htmlFor="category">Category</label>
+          <select id="category">
             <option>Which category do you choose?</option>
           </select>
+
           <button type="submit">Submit</button>
         </form>
 
