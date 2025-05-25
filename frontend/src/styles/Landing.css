@@ -6,18 +6,19 @@
 }
 
 body {
-  font-family: 'Segoe UI', sans-serif;
+  font-family: "Segoe UI", sans-serif;
   color: #111;
 }
 html {
   scroll-behavior: smooth;
 }
 
-.landing-container{
+.landing-container {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  width: 98.5vw;
+  width: 100%;
+  overflow: hidden;
 }
 /* Header */
 .header {
@@ -36,7 +37,6 @@ html {
   margin-left: 2rem;
   margin-right: 1rem;
 }
-
 
 .header nav {
   display: flex;
@@ -63,7 +63,7 @@ html {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-top: .5rem;
+  margin-top: 0.5rem;
 }
 
 .search-contact input {
@@ -105,7 +105,7 @@ html {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url('/public/png.gif') no-repeat center center / cover;
+  background: url("/public/png.gif") no-repeat center center / cover;
   z-index: 0;
 }
 
@@ -123,7 +123,6 @@ html {
 .hero h1 {
   margin: 1.5rem;
   font-size: 1.8rem;
-  
 }
 
 .hero p {
@@ -131,7 +130,7 @@ html {
   font-size: 1.2rem;
 }
 
-.hero button {
+.hero .desktop-text {
   margin-top: 1.5rem;
   margin-left: 1.5rem;
   background-color: #e6007e;
@@ -143,7 +142,7 @@ html {
   transition: background-color 0.3s ease;
 }
 
-.hero button:hover {
+.hero .desktop-text:hover {
   background-color: #c8006f;
 }
 
@@ -151,7 +150,7 @@ html {
 .features {
   text-align: center;
   padding: 3rem 1rem;
-  background: #f9f9f9 url('/public/dots.jpg') no-repeat center center / cover;
+  background: #f9f9f9 url("/public/dots.jpg") no-repeat center center / cover;
   opacity: 0.9;
 }
 
@@ -214,7 +213,7 @@ html {
   gap: 1rem;
   margin-top: 1rem;
   width: 45%;
-  .box{
+  .box {
     font-weight: 300;
   }
 }
@@ -266,6 +265,9 @@ html {
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
+.highlights .bottom-button {
+  display: none;
+}
 
 .highlights button:hover {
   background-color: #c8006f;
@@ -278,20 +280,20 @@ html {
   justify-content: space-evenly;
   flex-wrap: wrap;
   border: 2px solid #ddd;
-  box-shadow: 0 0 2px 3px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 12px 3px rgba(0, 0, 0, 0.3);
+  background-color: #f9f9f9;
 }
 
 .footer .footer-logo {
   font-weight: bold;
   font-size: 1.5rem;
   margin-top: 1.5rem;
-
 }
 
 .footer-links {
   display: flex;
   justify-content: space-between;
-  gap: 2rem
+  gap: 2rem;
 }
 
 .footer-links ul {
@@ -304,11 +306,13 @@ html {
 }
 
 /* All the hidden elements and tags*/
-.logo-res{
+.logo-res,
+.mobile-nav,
+.mobile-text {
   display: none;
 }
 
-/* iPhone 13 & 14 Responsive Enhancements */
+/* iPhone & Small Devices */
 @media screen and (max-width: 430px) {
   .header {
     flex-direction: column;
@@ -336,30 +340,98 @@ html {
   .hero {
     flex-direction: column;
     padding: 1rem;
-    height: auto;
+    height: 100vh;
   }
 
   .overlay {
-    padding: 1rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 4rem 1.2rem;
+    color: white;
   }
 
   .hero h1 {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     margin: 1rem 0;
+    line-height: 2.5rem;
+  }
+
+  .hero p,
+  .hero .desktop-text {
+    margin-left: 0;
   }
 
   .hero p {
-    font-size: 1rem;
-    margin-left: 0;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    line-height: 1.5rem;
   }
 
-  .hero button {
-    width: 100%;
-    margin-left: 0;
+  .desktop-text {
+    display: none;
+  }
+
+  .hero .mobile-text {
+    display: inline-block;
+    font-size: 1.2rem;
+    margin-top: 1.5rem;
+    background-color: #e6007e;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .video-logo {
+    position: absolute;
+    bottom: 4rem;
+    right: 3rem;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50px;
+    padding: 20px;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.3);
+    z-index: 2;
+  }
+
+  .video-logo {
+    color: #f1add2;
+    font-size: 2rem;
+    border-radius: 50px;
+  }
+
+  .features .card {
+    border-radius: 20px;
+    box-shadow: 0 0 12px 1px rgba(0, 0, 0, 0.5);
+    margin-bottom: 1rem;
   }
 
   .features h2 {
     font-size: 2rem;
+    text-align: left;
+  }
+  .card .icon {
+    font-size: 4rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .card p {
+    font-size: 1.5rem;
   }
 
   .feature-cards {
@@ -374,21 +446,49 @@ html {
   .highlights {
     flex-direction: column;
     padding: 2rem 1rem;
-    align-items: center;
   }
 
   .highlights .left h2 {
     font-size: 2rem;
+    margin-top: 2rem;
     margin-left: 0;
-    text-align: center;
+    text-align: left;
+  }
+
+  .highlights .left span {
+    font-weight: 800;
+  }
+
+  .highlight-h2-br {
+    display: none;
   }
 
   .highlights button {
-    margin-left: 0;
     width: 100%;
+    margin-left: 0;
   }
 
-  .highlights .right {
+  .highlights .left-top-button {
+    display: none;
+  }
+
+  .highlights .bottom-button {
+    display: inline-block;
+    width: 40%;
+    margin-top: 1rem;
+    margin-left: 0;
+    font-size: 1.2rem;
+    background-color: #e6007e;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .highlights .right,
+  .twoDiv .box:nth-child(1),
+  .twoDiv .box:nth-child(2) {
     width: 100%;
   }
 
@@ -396,21 +496,17 @@ html {
     flex-direction: column;
   }
 
-  .twoDiv .box:nth-child(1),
-  .twoDiv .box:nth-child(2) {
-    width: 100%;
-  }
-
   .footer {
     flex-direction: column;
-    align-items: center;
-    text-align: center;
+  }
+
+  .footer .footer-logo {
+    margin-bottom: 1rem;
   }
 
   .footer-links {
     flex-direction: column;
-    gap: 1rem;
-    align-items: center;
+    gap: 2rem;
   }
 
   .footer-links ul {
@@ -420,46 +516,51 @@ html {
   .footer-links li {
     font-size: 1rem;
   }
+
+  .footer .footer-logo .footer-links {
+    text-align: left;
+  }
 }
 
-/* Mobile Navbar for Landing Page */
+/* Mobile Navbar (up to tablets) */
 @media screen and (max-width: 768px) {
   .header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     justify-content: space-between;
     padding: 1rem;
   }
 
   .logo {
-    font-size: 1.2rem;
-    font-weight: bold;
     display: none;
   }
 
   .logo-res {
-    display: block;
+    display: inline;
     font-size: 1.5rem;
     font-weight: bold;
-    margin-left: 1rem;
   }
 
-  nav, a,
+  nav,
   .search-contact,
-  .login-btn {
+  .login-btn,
+  .header a {
     display: none !important;
   }
 
   .mobile-nav {
-    display: flex;
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: flex-end;
     align-items: center;
-    gap: 1rem;
+    font-size: 1.2rem;
+    gap: 1.5rem;
+    margin-left: auto;
   }
 
   .mobile-nav i {
-    font-size: 1.2rem;
     color: #333;
     cursor: pointer;
   }
 }
-
-/* Optional: Basic icons using Font Awesome */
-/* Make sure to include Font Awesome CSS in your project */

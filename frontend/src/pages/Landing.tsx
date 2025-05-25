@@ -2,13 +2,20 @@ import React, { useState } from "react";
 import "../styles/Landing.css";
 import ModalForm from "../components/ModalForm";
 import { IoSearchOutline } from "react-icons/io5";
+import { FaRegUser } from "react-icons/fa";
+import { RxHamburgerMenu } from "react-icons/rx";
+import { FaPlay } from "react-icons/fa";
 
 const Landing: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const SearchIcon = IoSearchOutline as unknown as React.FC;
+  const UserIcon = FaRegUser as unknown as React.FC;
+  const HamburgerIcon = RxHamburgerMenu as unknown as React.FC;
+  const PlayIcon = FaPlay as unknown as React.FC;
+
 
   return (
     <div className="landing-container">
-
       {/* Modal */}
       {isModalOpen && <ModalForm onClose={() => setIsModalOpen(false)} />}
 
@@ -24,8 +31,10 @@ const Landing: React.FC = () => {
           <input type="text" placeholder="Search" />
         </div>
         <a href="#">Contact Us</a>
-        <div className="mobile-icons">
-          <IoSearchOutline />
+        <div className="mobile-nav">
+          <SearchIcon />
+          <UserIcon />
+          <HamburgerIcon />
         </div>
       </header>
 
@@ -42,7 +51,11 @@ const Landing: React.FC = () => {
             <br /> sed do eiusmod tempor incididunt ut labore
             <br /> et dolore magna aliqua
           </p>
-          <button onClick={() => setIsModalOpen(true)}>Start Curating</button>
+          <button className="desktop-text" onClick={() => setIsModalOpen(true)}>Start Curating</button>
+          <button className="mobile-text" onClick={() => setIsModalOpen(true)}>Explore Catalogue</button>
+          <div className="video-logo">
+            <PlayIcon />
+          </div>
         </div>
       </section>
 
@@ -53,19 +66,19 @@ const Landing: React.FC = () => {
           <div className="card">
             <div className="icon">📈</div>
             <p>
-              <strong>Lorem</strong> ipsum
+              Lorem <strong>ipsum</strong>
             </p>
           </div>
           <div className="card">
             <div className="icon">🔁</div>
             <p>
-              <strong>Lorem</strong> ipsum
+              Lorem <strong>ipsum</strong>
             </p>
           </div>
           <div className="card">
             <div className="icon">💰</div>
             <p>
-              <strong>Lorem</strong> ipsum
+              Lorem <strong>ipsum</strong>
             </p>
           </div>
         </div>
@@ -76,11 +89,11 @@ const Landing: React.FC = () => {
         <div className="left">
           <h2>
             <strong>
-              Lorem ipsum <br />
+              Lorem ipsum <br className="highlight-h2-br" />
             </strong>{" "}
             <span>dolor</span>
           </h2>
-          <button>sit amet</button>
+          <button className="left-top-button">sit amet</button>
         </div>
         <div className="right">
           <div className="twoDiv">
@@ -105,6 +118,7 @@ const Landing: React.FC = () => {
               <br /> Et Dolore
             </small>
           </div>
+          <button className="bottom-button">sit amet</button>
         </div>
       </section>
 
