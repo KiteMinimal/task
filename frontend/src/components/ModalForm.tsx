@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import '../styles/Modal.css';
-import LoadingModal from './LoadingModal';
+import React, { useState } from "react";
+import "../styles/Modal.css";
+import LoadingModal from "./LoadingModal";
 
 interface ModalFormProps {
   onClose: () => void;
@@ -16,7 +16,7 @@ const ModalForm: React.FC<ModalFormProps> = ({ onClose }) => {
     setTimeout(() => {
       setIsLoading(false);
       onClose(); // hide both modals after 5 seconds
-    }, 5000);
+    }, 3000);
   };
 
   return (
@@ -24,7 +24,9 @@ const ModalForm: React.FC<ModalFormProps> = ({ onClose }) => {
       {isLoading && <LoadingModal />}
 
       <div className="modal-box">
-        <button className="close-button" onClick={onClose}>✕</button>
+        <button className="close-button" onClick={onClose}>
+          ✕
+        </button>
         <h2>Lorem ipsum dolor</h2>
         <p>Lorem ipsum dolor sit amet, consectetur</p>
 
@@ -32,7 +34,11 @@ const ModalForm: React.FC<ModalFormProps> = ({ onClose }) => {
           <div className="row">
             <div style={{ flex: 1 }}>
               <label htmlFor="organization">Name of the organisation</label>
-              <input id="organization" type="text" placeholder="Organization name" />
+              <input
+                id="organization"
+                type="text"
+                placeholder="Organization name"
+              />
             </div>
             <div style={{ flex: 1 }}>
               <label htmlFor="contact">Contact number</label>
@@ -52,7 +58,8 @@ const ModalForm: React.FC<ModalFormProps> = ({ onClose }) => {
         </form>
 
         <p className="terms">
-          Submitting the form will accept the <a>Terms & Conditions</a> and <a>Privacy Policy</a>
+          Submitting the form will accept the <a>Terms & Conditions</a> and{" "}
+          <a>Privacy Policy</a>
         </p>
         <p className="login-note">
           Already have credentials? <span>Curator’s Login</span>

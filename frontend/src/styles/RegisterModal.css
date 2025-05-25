@@ -19,7 +19,7 @@
   padding: 2rem;
   width: 100%;
   max-width: 520px;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: "Segoe UI", sans-serif;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   animation: fadeIn 0.3s ease;
   position: relative;
@@ -74,7 +74,7 @@
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
-  margin-top: .8rem;
+  margin-top: 0.8rem;
   transition: 0.3s ease;
 }
 

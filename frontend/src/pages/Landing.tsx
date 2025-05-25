@@ -13,7 +13,6 @@ const Landing: React.FC = () => {
   const HamburgerIcon = RxHamburgerMenu as unknown as React.FC;
   const PlayIcon = FaPlay as unknown as React.FC;
 
-
   return (
     <div className="landing-container">
       {/* Modal */}
@@ -51,8 +50,12 @@ const Landing: React.FC = () => {
             <br /> sed do eiusmod tempor incididunt ut labore
             <br /> et dolore magna aliqua
           </p>
-          <button className="desktop-text" onClick={() => setIsModalOpen(true)}>Start Curating</button>
-          <button className="mobile-text" onClick={() => setIsModalOpen(true)}>Explore Catalogue</button>
+          <button className="desktop-text" onClick={() => setIsModalOpen(true)}>
+            Start Curating
+          </button>
+          <button className="mobile-text" onClick={() => setIsModalOpen(true)}>
+            Explore Catalogue
+          </button>
           <div className="video-logo">
             <PlayIcon />
           </div>

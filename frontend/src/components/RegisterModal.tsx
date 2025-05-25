@@ -1,28 +1,28 @@
-import React, { useState } from 'react';
-import '../styles/RegisterModal.css';
-import api from '../services/api'
+import React, { useState } from "react";
+import "../styles/RegisterModal.css";
+import api from "../services/api";
 
 interface Props {
   onClose: () => void;
 }
 
 const RegisterModal: React.FC<Props> = ({ onClose }) => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleRegister = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-    await api.post('/register', {
-      username,
-      password,
-    });
+      await api.post("/register", {
+        username,
+        password,
+      });
 
-    alert('Registered successfully! Now login.');
-    onClose(); // Close modal
-  } catch (err) {
-    alert('Registration failed. Try a different username.');
-  }
+      alert("Registered successfully! Now login.");
+      onClose(); // Close modal
+    } catch (err) {
+      alert("Registration failed. Try a different username.");
+    }
   };
 
   return (
@@ -35,7 +35,7 @@ const RegisterModal: React.FC<Props> = ({ onClose }) => {
             type="text"
             placeholder="Username"
             value={username}
-            onChange={e => setUsername(e.target.value)}
+            onChange={(e) => setUsername(e.target.value)}
             required
           />
 
@@ -43,7 +43,7 @@ const RegisterModal: React.FC<Props> = ({ onClose }) => {
             type="password"
             placeholder="Password"
             value={password}
-            onChange={e => setPassword(e.target.value)}
+            onChange={(e) => setPassword(e.target.value)}
             required
           />
 

@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
-import '../styles/Login.css';
-import RegisterModal from '../components/RegisterModal';
-import api from '../services/api';
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from "react";
+import "../styles/Login.css";
+import RegisterModal from "../components/RegisterModal";
+import api from "../services/api";
+import { useNavigate } from "react-router-dom";
 
 const Login: React.FC = () => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   const [showModal, setShowModal] = useState(false);
 
   const navigate = useNavigate();
@@ -14,18 +14,18 @@ const Login: React.FC = () => {
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-    const response = await api.post('/login', {
-      username,
-      password,
-    });
+      const response = await api.post("/login", {
+        username,
+        password,
+      });
 
-    const token = response.data.access_token;
-    localStorage.setItem('token', token);
+      const token = response.data.access_token;
+      localStorage.setItem("token", token);
 
-    navigate('/landing'); // ← CURRENT
-  } catch (err) {
-    alert('Invalid username or password');
-  }
+      navigate("/landing"); // ← CURRENT
+    } catch (err) {
+      alert("Invalid username or password");
+    }
   };
 
   return (
@@ -37,7 +37,7 @@ const Login: React.FC = () => {
           type="text"
           placeholder="Username"
           value={username}
-          onChange={e => setUsername(e.target.value)}
+          onChange={(e) => setUsername(e.target.value)}
           required
         />
 
@@ -45,7 +45,7 @@ const Login: React.FC = () => {
           type="password"
           placeholder="Password"
           value={password}
-          onChange={e => setPassword(e.target.value)}
+          onChange={(e) => setPassword(e.target.value)}
           required
         />
 

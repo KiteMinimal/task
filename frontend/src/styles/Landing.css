@@ -308,7 +308,8 @@ html {
 /* All the hidden elements and tags*/
 .logo-res,
 .mobile-nav,
-.mobile-text {
+.mobile-text,
+.video-logo {
   display: none;
 }
 
