@@ -84,6 +84,7 @@
 
 /* Cancel Button */
 .cancel-btn {
+  margin-top: 1rem;
   background: #ccc;
   color: #333;
   padding: 10px;
